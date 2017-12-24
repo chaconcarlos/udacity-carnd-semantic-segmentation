@@ -10,7 +10,7 @@ from distutils.version import LooseVersion
 
 STD_DEV_INITIALIZER = 0.01
 REGULARIZER_WEIGHT  = 1e-3
-LEARNING_RATE       = 0.00001
+LEARNING_RATE       = 0.00050
 KEEP_PROB           = 0.5
 EPOCHS              = 50
 BATCH_SIZE          = 5
