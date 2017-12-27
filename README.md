@@ -67,9 +67,9 @@ The network is trained using the [Kitti Road dataset](http://www.cvlibs.net/data
 
 ```python
 LEARNING_RATE  = 0.00050
-KEEP_PROB         = 0.5
-EPOCHS              = 50
-BATCH_SIZE        = 5
+KEEP_PROB      = 0.5
+EPOCHS         = 50
+BATCH_SIZE     = 5
 ```
 
 The learning rate was raised from the initial 0.00001, which yielded more exact results and less noise in the images, as can be seen in the next images:
