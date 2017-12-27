@@ -10,7 +10,7 @@ from distutils.version import LooseVersion
 
 STD_DEV_INITIALIZER = 0.01
 REGULARIZER_WEIGHT  = 1e-3
-LEARNING_RATE       = 0.00001
+LEARNING_RATE       = 0.00050
 KEEP_PROB           = 0.5
 EPOCHS              = 50
 BATCH_SIZE          = 5
@@ -70,7 +70,7 @@ def get_convolution2D(previous_layer, num_classes):
     return conv
 
 def get_convolution2D_transpose(previous_layer, num_classes, kernel_size, strides):
-    # returns a 2D convolution
+    # returns a 2D transpose convolution
     initializer = tf.random_normal_initializer(stddev = STD_DEV_INITIALIZER)
     regularizer = tf.contrib.layers.l2_regularizer(REGULARIZER_WEIGHT)
     conv        = tf.layers.conv2d_transpose(
@@ -92,14 +92,21 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes):
     :param num_classes: Number of classes to classify
     :return: The Tensor for the last layer of output
     """
-    # TODO: Implement function
+    # Convolutional 1x1 layer for VGG's layer 7
     l7_conv1x1   = get_convolution2D(vgg_layer7_out, num_classes)
+    # Deconvolutional layer with kernel size = 4 and stride = 2.
     l7_upsample1 = get_convolution2D_transpose(l7_conv1x1, num_classes, 4, strides = (2, 2))
+    # Convolutional 1x1 layer for VGG's layer 4
     l4_conv1x1   = get_convolution2D(vgg_layer4_out, num_classes)
+    # Skip layer adding the VGG's layers 7 and 4
     l4_skip      = tf.add(l7_upsample1, l4_conv1x1)
+    # Deconvolutional layer with kernel size = 4 and stride = 2.
     l4_upsample2 = get_convolution2D_transpose(l4_skip, num_classes, 4, strides = (2, 2))
+    # Convolutional 1x1 layer for VGG's layer 3
     l3_conv1x1   = get_convolution2D(vgg_layer3_out, num_classes)
+    # Skip layer adding the VGG's layers 4 and 3
     l3_skip      = tf.add(l4_upsample2, l3_conv1x1)
+    # Deconvolutional layer with kernel size = 16 and stride = 8.
     l3_upsample3 = get_convolution2D_transpose(l3_skip, num_classes, 16, strides = (8, 8))
     
     return l3_upsample3
