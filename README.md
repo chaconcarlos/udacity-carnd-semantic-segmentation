@@ -75,9 +75,11 @@ BATCH_SIZE        = 5
 The learning rate was raised from the initial 0.00001, which yielded more exact results and less noise in the images, as can be seen in the next images:
 
 ![Training on 50 epochs using a 0.00001 learning rate](report_images/initial_learning_rate.png  "Training on 50 epochs using a 0.00001 learning rate")
+
 *Result on training on 50 epochs using a 0.00001 learning rate*
 
 ![Training on 50 epochs using 0.00050 learning rate.](report_images/final_learning_rate.png  "Training on 50 epochs using 0.00050 learning rate.")
+
 *Result on training on 50 epochs using a 0.00050 learning rate*
 
 The model loss decreases over time, until it gets stable around 44 epochs.
