@@ -74,24 +74,16 @@ BATCH_SIZE        = 5
 
 The learning rate was raised from the initial 0.00001, which yielded more exact results and less noise in the images, as can be seen in the next images:
 
-![Training on 50 epochs using a 0.00001 learning rate](/home/carlos/work/source/repo_sdce/repo_courses_udacity/SDCE/CarND-Semantic-Segmentation/report_images/initial_learning_rate.png  "Training on 50 epochs using a 0.00001 learning rate")
+![Training on 50 epochs using a 0.00001 learning rate](report_images/initial_learning_rate.png  "Training on 50 epochs using a 0.00001 learning rate")
 *Result on training on 50 epochs using a 0.00001 learning rate*
 
-![Training on 50 epochs using 0.00050 learning rate.](/home/carlos/work/source/repo_sdce/repo_courses_udacity/SDCE/CarND-Semantic-Segmentation/report_images/final_learning_rate.png  "Training on 50 epochs using 0.00050 learning rate.")
+![Training on 50 epochs using 0.00050 learning rate.](report_images/final_learning_rate.png  "Training on 50 epochs using 0.00050 learning rate.")
 *Result on training on 50 epochs using a 0.00050 learning rate*
 
-The model loss decreases over time, until it gets stable around 40 epochs.
+The model loss decreases over time, until it gets stable around 44 epochs.
 
-Epoch : 40 / 50 - loss: 0.021487 - Time: 0:00:53.606252
-Epoch : 41 / 50 - loss: 0.026398 - Time: 0:00:53.617353
-Epoch : 42 / 50 - loss: 0.039143 - Time: 0:00:53.680994
-Epoch : 43 / 50 - loss: 0.079197 - Time: 0:00:53.747470
-Epoch : 44 / 50 - loss: 0.047469 - Time: 0:00:53.778040
-Epoch : 45 / 50 - loss: 0.056144 - Time: 0:00:53.708906
-Epoch : 46 / 50 - loss: 0.038440 - Time: 0:00:53.645469
-Epoch : 47 / 50 - loss: 0.028116 - Time: 0:00:53.587635
-Epoch : 48 / 50 - loss: 0.024286 - Time: 0:00:53.589970
 Epoch : 49 / 50 - loss: 0.021773 - Time: 0:00:53.528992
+
 Epoch : 50 / 50 - loss: 0.038319 - Time: 0:00:53.575552
 
 *Training finished. Training time: 0:44:49.083013*
@@ -100,17 +92,17 @@ Epoch : 50 / 50 - loss: 0.038319 - Time: 0:00:53.575552
 
 The images are clearly segmented by the road, the NN did a good job clearly differentating the rest of the objects. 
 
-![](/home/carlos/work/source/repo_sdce/repo_courses_udacity/SDCE/CarND-Semantic-Segmentation/report_images/uu_000057.png) 
+![](report_images/uu_000057.png) 
 
-![](/home/carlos/work/source/repo_sdce/repo_courses_udacity/SDCE/CarND-Semantic-Segmentation/report_images/uu_000072.png) 
+![](report_images/uu_000072.png) 
 
-![](/home/carlos/work/source/repo_sdce/repo_courses_udacity/SDCE/CarND-Semantic-Segmentation/report_images/uu_000085.png) 
+![](report_images/uu_000085.png) 
 
-![](/home/carlos/work/source/repo_sdce/repo_courses_udacity/SDCE/CarND-Semantic-Segmentation/report_images/improvements.png) 
+![](report_images/improvements.png) 
 
 However, in a few images the NN couldn't classify correctly the road. This can be improved by augmenting the data (by generating new images from the ones in the set).
 
-![](/home/carlos/work/source/repo_sdce/repo_courses_udacity/SDCE/CarND-Semantic-Segmentation/report_images/um_000070.png) 
+![](report_images/um_000070.png) 
 
 ## Other Project Details
 ### Setup
