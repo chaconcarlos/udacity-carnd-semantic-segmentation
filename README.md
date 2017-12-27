@@ -84,11 +84,17 @@ The learning rate was raised from the initial 0.00001, which yielded more exact 
 
 The model loss decreases over time, until it gets stable around 44 epochs.
 
+```
+Epoch : 43 / 50 - loss: 0.079197 - Time: 0:00:53.747470
+Epoch : 44 / 50 - loss: 0.047469 - Time: 0:00:53.778040
+Epoch : 45 / 50 - loss: 0.056144 - Time: 0:00:53.708906
+Epoch : 46 / 50 - loss: 0.038440 - Time: 0:00:53.645469
+Epoch : 47 / 50 - loss: 0.028116 - Time: 0:00:53.587635
+Epoch : 48 / 50 - loss: 0.024286 - Time: 0:00:53.589970
 Epoch : 49 / 50 - loss: 0.021773 - Time: 0:00:53.528992
-
 Epoch : 50 / 50 - loss: 0.038319 - Time: 0:00:53.575552
-
-*Training finished. Training time: 0:44:49.083013*
+```
+*Training time: 0:44:49.083013*
 
 ## Image Results
 
